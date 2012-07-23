@@ -102,7 +102,7 @@
 		
 		NSMutableArray *moviesOfSection = [[self movies] objectAtIndex:[indexPath section]];
 		NSArray *movie;
-        if (indexPath.row <= moviesOfSection.count) {
+        if (indexPath.row < moviesOfSection.count) {
             movie = [moviesOfSection objectAtIndex:[indexPath row]];
         }		
 		[[cell textLabel] setText:[movie objectAtIndex:kRowNameOfMovie]];
