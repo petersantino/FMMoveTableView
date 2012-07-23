@@ -101,8 +101,10 @@
 		
 		
 		NSMutableArray *moviesOfSection = [[self movies] objectAtIndex:[indexPath section]];
-		NSArray *movie = [moviesOfSection objectAtIndex:[indexPath row]];
-		
+		NSArray *movie;
+        if (indexPath.row <= moviesOfSection.count) {
+            movie = [moviesOfSection objectAtIndex:[indexPath row]];
+        }		
 		[[cell textLabel] setText:[movie objectAtIndex:kRowNameOfMovie]];
 		[[cell detailTextLabel] setText:[movie objectAtIndex:kRowYearOfMovie]];
 		[cell setShouldIndentWhileEditing:NO];
